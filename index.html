@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestro Aniversario</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Fondo con blur -->
+    <div class="background-blur"></div>
+    
+    <!-- Reproductor de música -->
+    <div class="music-player">
+        <div class="album-cover">
+            <img src="album-cover.png" alt="De Hielo - El Cuarteto de Nos">
+        </div>
+        <div class="music-info">
+            <div class="song-title">De Hielo</div>
+            <div class="artist-name">El Cuarteto de Nos</div>
+        </div>
+        <div class="music-controls">
+            <button class="control-btn" id="playPauseBtn">
+                <svg class="play-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z"/>
+                </svg>
+                <svg class="pause-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="display:none;">
+                    <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+                </svg>
+            </button>
+        </div>
+        <div class="volume-control">
+            <svg class="volume-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+            </svg>
+            <input type="range" id="volumeSlider" min="0" max="100" value="50" class="volume-slider">
+        </div>
+        <audio id="audioPlayer" loop>
+            <source src="de-hielo.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+    
+    <!-- Contenido principal -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header fade-in">
+            <h1 class="main-title">Nuestro Amor</h1>
+            <div class="subtitle">Juntos e inseparable</div>
+        </header>
+
+        <!-- Contador de tiempo -->
+        <section class="counter-section fade-in">
+            <h3 class="counter-title">Juntos desde hace</h3>
+            <div class="counter-grid">
+                <div class="counter-item">
+                    <div class="counter-value" id="years">0</div>
+                    <div class="counter-label">Años</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-value" id="months">0</div>
+                    <div class="counter-label">Meses</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-value" id="days">0</div>
+                    <div class="counter-label">Días</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-value" id="hours">0</div>
+                    <div class="counter-label">Horas</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-value" id="minutes">0</div>
+                    <div class="counter-label">Minutos</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-value" id="seconds">0</div>
+                    <div class="counter-label">Segundos</div>
+                </div>
+            </div>
+            <div class="counter-date">Desde el 7 de Agosto, 2025</div>
+        </section>
+
+        <!-- Primera sección: Texto izquierda, Foto derecha -->
+        <section class="content-section fade-in">
+            <div class="text-content">
+                <h2 class="section-title">Mi Amor</h2>
+                <div class="letter-text">
+                    <p>desde que llegaste a mi vida todo tomó un sentido nuevo. Tu sonrisa es el lugar donde quiero quedarme para siempre, y tus abrazos son el hogar que nunca supe que necesitaba.</p>
+                    
+                    <p>Cada día a tu lado me enciende el alma, me calma, me completa. No existe nada más hermoso que mirarte y saber que te elijo una y otra vez. </p>
+                    
+                    <p> Sos mi paz, mi deseo, mi futuro. Te amo mucho mas de lo que puedo explicar con mis palabras.</p>
+                    
+                    <p class="signature">Con todo mi amor,<br>Ivan</p>
+                </div>
+            </div>
+            
+            <div class="image-content">
+                <div class="heart-frame">
+                    <img src="photo1.jpg" alt="Nuestra foto" class="heart-photo">
+                </div>
+            </div>
+        </section>
+
+        <!-- Segunda sección: Foto izquierda, Texto derecha -->
+        <section class="content-section reverse fade-in">
+            <div class="image-content">
+                <div class="heart-frame">
+                    <img src="photo2.jpg" alt="Nuestra foto" class="heart-photo">
+                </div>
+            </div>
+            
+            <div class="text-content">
+                <h2 class="section-title">Nuestros Momentos</h2>
+                <div class="letter-text">
+                    <p>Cada sonrisa compartida, cada abrazo sincero, cada beso hermoso de tus labios construye la hermosa relacion de nosotros.</p>
+                    
+                    <p>Recuerdo cada detalle: tu risa, la forma en que me miras, cada momento que estuve con vos. Son los pequeños momentos los que crean los recuerdos más grandes.</p>
+                    
+                    <p>Gracias por sacarme una sonrisa en los días comunes. Por este año y por todos los que vendrán.</p>
+                    
+                    <p class="signature">Siempre tuyo</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer fade-in">
+            <div class="footer-text">
+                <p>Te amare</p>
+                <p class="date">♥ Para siempre ♥</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
