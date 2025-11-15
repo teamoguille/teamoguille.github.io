@@ -23,6 +23,39 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(section);
     });
 
+    // Control de reproductor de música
+    const audioPlayer = document.getElementById('audioPlayer');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const playIcon = playPauseBtn.querySelector('.play-icon');
+    const pauseIcon = playPauseBtn.querySelector('.pause-icon');
+    const volumeSlider = document.getElementById('volumeSlider');
+
+    // Configurar volumen inicial
+    audioPlayer.volume = volumeSlider.value / 100;
+
+    // Función para reproducir/pausar
+    playPauseBtn.addEventListener('click', () => {
+        if (audioPlayer.paused) {
+            audioPlayer.play();
+            playIcon.style.display = 'none';
+            pauseIcon.style.display = 'block';
+        } else {
+            audioPlayer.pause();
+            playIcon.style.display = 'block';
+            pauseIcon.style.display = 'none';
+        }
+    });
+
+    // Control de volumen
+    volumeSlider.addEventListener('input', (e) => {
+        const volume = e.target.value / 100;
+        audioPlayer.volume = volume;
+        
+        // Actualizar el gradiente del slider
+        const percentage = e.target.value;
+        e.target.style.background = `linear-gradient(to right, var(--primary-pink) 0%, var(--primary-pink) ${percentage}%, #e0e0e0 ${percentage}%, #e0e0e0 100%)`;
+    });
+
     // Efecto parallax suave en el scroll
     let ticking = false;
     
